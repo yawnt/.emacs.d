@@ -56,13 +56,11 @@
   :config (ivy-mode 1))
 
 ;; Projectile
-(use-package projectile
+(use-package counsel-projectile
+  :ensure t
+  :bind (:map projectile-mode-map ("C-c p" . 'projectile-command-map))
   :config
-  (projectile-global-mode)
-  (setq projectile-mode-line
-        '(:eval (format " [%s]" (projectile-project-name))))
-  (setq projectile-remember-window-configs t)
-  (setq projectile-completion-system 'ivy))
+  (counsel-projectile-mode))
 
 ;; Magit
 (use-package magit
