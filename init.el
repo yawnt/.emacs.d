@@ -1,3 +1,6 @@
+;; Custom file
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file 'noerror)
 ;; Install `use-package`
 (require 'package)
 (add-to-list 'package-archives
@@ -19,7 +22,6 @@
 (menu-bar-mode -1) 
 ;; Backups and auto-save in one directory
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
-(setq auto-save-file-name-transforms `((".*" (concat user-emacs-directory "saves") t)))
 ;; No lock files, sorry
 (setq create-lockfiles nil)
 
@@ -96,19 +98,3 @@
 
 (use-package cargo
   :hook (rust-mode . cargo-minor-mode))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ivy-count-format "(%d/%d) ")
- '(ivy-use-virtual-buffers t)
- '(package-selected-packages
-   (quote
-    (ace-jump-mode which-key use-package toml-mode projectile magit lsp-ui lsp-ivy flycheck dap-mode counsel company-lsp cargo base16-theme))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
