@@ -35,9 +35,11 @@
   :config
   (which-key-mode))
 
-;; Ace jump mode
-(use-package ace-jump-mode
-  :bind ("C-." . ace-jump-mode))
+;; Avy
+(use-package avy
+  :bind (("C-:" . avy-goto-char)
+         ("M-g g" . avy-goto-line)
+         ("M-g w" . avy-goto-word-1)))
 
 ;; Counsel + Swiper + Ivy
 (use-package counsel
